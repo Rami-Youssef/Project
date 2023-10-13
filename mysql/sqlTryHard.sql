@@ -51,3 +51,22 @@ END$
 DELIMITER;
 drop procedure vérifier;
 call vérifier(1,-20);
+delimiter $
+create procedure vivement(
+    in p_numero1 int,
+    in p_numero2 int,
+    IN p_montant decimal(4,2)
+)
+BEGIN
+if p_montant>0
+THEN if EXISTS(select * from Compte where numero = p_numero1 and solde>=montant)
+THEN insert INTO Operation(date, type, montant, numeroCompte)
+values(NOW(),'crédit',p_montant,p_numero1);
+insert INTO Operation(date, type, montant, numeroCompte)
+values(NOW(),'débit',p_montant,p_numero2);
+else SELECT "votre sold n'est pas valid" as Message;
+end if;
+else select "votre matantant n'est pas valid" as Message;
+end if;
+end $
+delimiter ;
