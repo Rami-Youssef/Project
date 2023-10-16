@@ -70,3 +70,5 @@ else select "votre matantant n'est pas valid" as Message;
 end if;
 end $
 delimiter ;
+SELECT * from compte;
+
