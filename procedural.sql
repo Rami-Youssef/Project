@@ -1,6 +1,6 @@
 create DATABASE ges_emp;
 use ges_emp;
-create TABLE Adhrent(
+create TABLE Adhrent(h
     numero INT PRIMARY KEY AUTO_INCREMENT UNIQUE,
     nom char(25),
     prenom char(25), 
