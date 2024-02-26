@@ -50,7 +50,7 @@ create procedure stockée3(in p_numéro int,in p_id_livre int)
 BEGIN
 insert into Emprunt(numero_adherent,id_livre,date_emprunt,date_rendu)
 values(p_numéro,p_id_livre,NOW(),NULL);
-UPDATE Livre
+UPDATE Livre F
 SET disponible = 0 where id_livre = p_id_livre;
 END$
 delimiter ;
