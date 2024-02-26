@@ -1,4 +1,4 @@
-create DATABASE ges_emp; 
+create DATABASE ges_emp; P0I0
 use ges_emp;
 create TABLE Adhrent(h
     numero INT PRIMARY KEY AUTO_INCREMENT UNIQUE,
